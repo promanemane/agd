@@ -78,23 +78,41 @@ footer .logo img{height:52px;opacity:.9}
 .burger.on span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
 /* ---------- HERO ---------- */
-.hero{position:relative;padding:118px 0 96px;overflow:hidden}
+.hero{position:relative;padding:150px 0 118px;overflow:hidden}
+.hero-bg{
+  position:absolute;inset:0;background:url('img/hero.jpg') center/cover no-repeat;
+  opacity:.5;
+}
+.hero-bg::after{
+  content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(90deg,var(--ink) 4%,rgba(5,5,10,.72) 46%,rgba(5,5,10,.3) 100%),
+    linear-gradient(0deg,var(--ink) 2%,transparent 42%);
+}
 .glow{
   position:absolute;inset:auto;width:900px;height:900px;border-radius:50%;
   background:radial-gradient(circle,rgba(139,92,246,.26),rgba(192,38,211,.09) 42%,transparent 68%);
   top:-420px;left:50%;transform:translateX(-50%);pointer-events:none;
 }
 .hero-inner{position:relative;max-width:860px}
-.eyebrow{
-  display:inline-flex;align-items:center;gap:9px;font-size:13.5px;color:var(--violet-soft);
-  border:1px solid var(--line);border-radius:999px;padding:7px 15px;margin-bottom:30px;
-}
-.dot{width:6px;height:6px;border-radius:50%;background:var(--violet-soft)}
 h1{
   font-family:var(--serif);font-weight:400;font-size:clamp(44px,6.4vw,80px);
   line-height:1.04;letter-spacing:-.015em;
 }
 .grad{background:linear-gradient(110deg,var(--violet-soft),var(--magenta));-webkit-background-clip:text;background-clip:text;color:transparent}
+.cursor{
+  display:inline-block;width:3px;height:.82em;margin-left:6px;vertical-align:baseline;
+  background:var(--violet-soft);animation:blink .9s steps(1) infinite;
+}
+@keyframes blink{50%{opacity:0}}
+.cursor.done{animation:none;opacity:0}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+.card{opacity:0;transform:translateY(26px)}
+.card.in{opacity:1;transform:none;transition:opacity .65s ease,transform .65s cubic-bezier(.22,.8,.3,1)}
+.card:nth-child(2).in{transition-delay:.14s}
+.card:nth-child(3).in{transition-delay:.28s}
+@media(prefers-reduced-motion:reduce){.card{opacity:1;transform:none}}
 .lede{font-size:19px;color:var(--muted);max-width:620px;margin-top:26px}
 .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px}
 .btn{
@@ -105,10 +123,6 @@ h1{
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(139,92,246,.42)}
 .btn-ghost{border:1px solid var(--line);color:var(--text)}
 .btn-ghost:hover{background:rgba(139,92,246,.1)}
-.hero-meta{display:flex;flex-wrap:wrap;gap:38px;margin-top:62px;padding-top:34px;border-top:1px solid var(--line)}
-.hero-meta div{min-width:130px}
-.hero-meta b{display:block;font-family:var(--serif);font-size:34px;font-weight:400;line-height:1}
-.hero-meta small{color:var(--muted);font-size:14px;display:block;margin-top:7px}
 
 /* ---------- SECTIONS ---------- */
 section{padding:96px 0}
@@ -171,14 +185,9 @@ section{padding:96px 0}
 .partners{border-top:1px solid var(--line);text-align:center}
 .partners h2{font-family:var(--serif);font-weight:400;font-size:clamp(30px,4vw,44px);margin-bottom:14px}
 .partners p{color:var(--muted);max-width:520px;margin:0 auto 46px}
-.partner-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:18px}
-.partner{
-  width:172px;height:104px;border-radius:16px;background:var(--surface-2);
-  border:1px solid var(--line);display:grid;place-items:center;padding:22px;
-  transition:border-color .2s,background .2s;
-}
-.partner:hover{border-color:rgba(167,139,250,.36);background:#171227}
-.partner img{max-height:100%;max-width:100%;object-fit:contain;opacity:.86;filter:grayscale(1) brightness(1.7)}
+.partner-grid{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:46px 62px}
+.partner{display:flex;align-items:center;justify-content:center;height:78px}
+.partner img{height:100%;width:auto;max-width:190px;object-fit:contain;opacity:.92;transition:opacity .2s}
 .partner:hover img{opacity:1}
 
 /* Étapes */
@@ -241,7 +250,8 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;color:var(--muted);f
   .trust-grid{grid-template-columns:1fr}
   .contact-grid{grid-template-columns:1fr;gap:44px}
   .dest{grid-template-columns:1fr;gap:20px}
-  .partner{width:140px;height:88px}
+  .partner{height:58px}
+  .partner-grid{gap:32px 40px}
   .jobs{padding:38px}
 }
 @media(max-width:760px){
@@ -304,18 +314,13 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;color:var(--muted);f
 <!-- HERO -->
 <section class="hero">
   <div class="glow"></div>
+  <div class="hero-bg"></div>
   <div class="wrap hero-inner">
-    <span class="eyebrow"><span class="dot"></span><span data-fr="Cabinet basé à Dubaï" data-en="Based in Dubai">Cabinet basé à Dubaï</span></span>
-    <h1 data-fr="Votre dossier de visa, monté &lt;span class=&quot;grad&quot;&gt;proprement&lt;/span&gt;." data-en="Your visa file, built &lt;span class=&quot;grad&quot;&gt;properly&lt;/span&gt;.">Votre dossier de visa, monté <span class="grad">proprement</span>.</h1>
-    <p class="lede" data-fr="AGD Business Services accompagne les francophones qui s'installent à Dubaï, en Espagne ou à Malte. On analyse votre situation, on choisit le bon statut, et on prépare chaque pièce du dossier avec vous." data-en="AGD Business Services guides French speakers relocating to Dubai, Spain or Malta. We assess your situation, pick the right status, and prepare every document with you.">AGD Business Services accompagne les francophones qui s'installent à Dubaï, en Espagne ou à Malte. On analyse votre situation, on choisit le bon statut, et on prépare chaque pièce du dossier avec vous.</p>
-    <div class="cta-row">
+    <h1 id="typed"><span class="t1"></span><span class="grad t2"></span><span class="cursor" id="cursor"></span></h1>
+    <p class="lede reveal" data-fr="AGD Business Services accompagne les personnes qui s'installent à Dubaï, en Espagne ou à Malte. On analyse votre situation, on choisit le bon statut, et on prépare chaque pièce du dossier avec vous." data-en="AGD Business Services guides people relocating to Dubai, Spain or Malta. We assess your situation, pick the right status, and prepare every document with you.">AGD Business Services accompagne les personnes qui s'installent à Dubaï, en Espagne ou à Malte. On analyse votre situation, on choisit le bon statut, et on prépare chaque pièce du dossier avec vous.</p>
+    <div class="cta-row reveal">
       <a href="#destinations" class="btn btn-primary" data-fr="Voir les visas" data-en="See the visas">Voir les visas</a>
       <a href="#contact" class="btn btn-ghost" data-fr="Parler à un conseiller" data-en="Talk to an advisor">Parler à un conseiller</a>
-    </div>
-    <div class="hero-meta">
-      <div><b>3</b><small data-fr="destinations couvertes" data-en="destinations covered">destinations couvertes</small></div>
-      <div><b>7</b><small data-fr="types de visa proposés" data-en="visa types offered">types de visa proposés</small></div>
-      <div><b>90 j</b><small data-fr="garantie de remboursement" data-en="money-back guarantee">garantie de remboursement</small></div>
     </div>
   </div>
 </section>
@@ -549,8 +554,6 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;color:var(--muted);f
       <div class="partner"><img src="img/partenaire-2.png" alt=""></div>
       <div class="partner"><img src="img/partenaire-3.png" alt=""></div>
       <div class="partner"><img src="img/partenaire-4.png" alt=""></div>
-      <div class="partner"><img src="img/partenaire-5.png" alt=""></div>
-      <div class="partner"><img src="img/partenaire-6.png" alt=""></div>
     </div>
   </div>
 </section>
@@ -581,6 +584,42 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;color:var(--muted);f
 
 <script>
 (function(){
+  // --- Titre animé (machine à écrire) ---
+  var HEAD = {
+    fr:["L'expert en délivrance de visa, ","satisfait ou remboursé."],
+    en:["The visa specialists, ","satisfied or refunded."]
+  };
+  var t1 = document.querySelector('#typed .t1');
+  var t2 = document.querySelector('#typed .t2');
+  var cursor = document.getElementById('cursor');
+  var reveals = document.querySelectorAll('.reveal');
+  var timer = null;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function showRest(){ reveals.forEach(function(el){ el.classList.add('in'); }); }
+
+  function typeTitle(l){
+    clearTimeout(timer);
+    var parts = HEAD[l], full = parts[0] + parts[1], i = 0;
+    t1.textContent = ''; t2.textContent = '';
+    cursor.classList.remove('done');
+    if(reduce){
+      t1.textContent = parts[0]; t2.textContent = parts[1];
+      cursor.classList.add('done'); showRest(); return;
+    }
+    (function step(){
+      i++;
+      t1.textContent = full.slice(0, Math.min(i, parts[0].length));
+      t2.textContent = i > parts[0].length ? full.slice(parts[0].length, i) : '';
+      if(i < full.length){
+        timer = setTimeout(step, 42);
+      } else {
+        cursor.classList.add('done');
+        showRest();
+      }
+    })();
+  }
+
   // --- Langue ---
   var lang = 'fr';
   var nodes = document.querySelectorAll('[data-fr]');
@@ -594,10 +633,25 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;color:var(--muted);f
     document.querySelectorAll('.lang button').forEach(function(b){
       b.classList.toggle('on', b.dataset.lang === l);
     });
+    typeTitle(l);
   }
+  typeTitle('fr');
   document.querySelectorAll('.lang button').forEach(function(b){
     b.addEventListener('click', function(){ setLang(b.dataset.lang); });
   });
+
+  // --- Apparition des cartes au défilement ---
+  var cards = document.querySelectorAll('.dest .card');
+  if(reduce || !('IntersectionObserver' in window)){
+    cards.forEach(function(c){ c.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:.18});
+    cards.forEach(function(c){ io.observe(c); });
+  }
 
   // --- Menu déroulant visas ---
   var drop = document.getElementById('drop');
