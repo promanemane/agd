@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AGD Business Services — Visas Dubaï, Espagne, Malte</title>
+<meta name="description" content="AGD accompagne la constitution de votre dossier de visa pour Dubaï, l'Espagne et Malte. Freelance, business, salarié, résidence non lucrative.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#05050A;
+  --surface:#0E0C18;
+  --surface-2:#141024;
+  --line:rgba(167,139,250,.14);
+  --violet:#8B5CF6;
+  --magenta:#C026D3;
+  --violet-soft:#A78BFA;
+  --text:#EDEBF5;
+  --muted:#8F8AA3;
+  --serif:"Instrument Serif",Georgia,serif;
+  --sans:"Instrument Sans",system-ui,-apple-system,sans-serif;
+  --wrap:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--ink);color:var(--text);font-family:var(--sans);
+  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--violet-soft);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+
+/* ---------- NAV ---------- */
+header{
+  position:sticky;top:0;z-index:60;
+  background:rgba(5,5,10,.72);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo img{height:42px;width:auto}
+footer .logo img{height:52px;opacity:.9}
+.nav-links{display:flex;align-items:center;gap:34px}
+.nav-links a{font-size:15px;color:var(--muted);transition:color .18s}
+.nav-links a:hover{color:var(--text)}
+.drop{position:relative}
+.drop>button{
+  background:none;border:0;color:var(--muted);font:inherit;font-size:15px;cursor:pointer;
+  display:flex;align-items:center;gap:6px;padding:0;
+}
+.drop>button:hover{color:var(--text)}
+.drop>button svg{transition:transform .2s}
+.drop.open>button svg{transform:rotate(180deg)}
+.drop-menu{
+  position:absolute;top:calc(100% + 16px);left:-18px;min-width:238px;
+  background:var(--surface-2);border:1px solid var(--line);border-radius:14px;
+  padding:8px;opacity:0;visibility:hidden;transform:translateY(-6px);
+  transition:opacity .18s,transform .18s,visibility .18s;
+  box-shadow:0 24px 48px rgba(0,0,0,.55);
+}
+.drop.open .drop-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.drop-menu a{display:block;padding:11px 14px;border-radius:9px;font-size:15px;color:var(--text)}
+.drop-menu a:hover{background:rgba(139,92,246,.13)}
+.drop-menu span{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.lang button{
+  background:none;border:0;color:var(--muted);font:inherit;font-size:13px;font-weight:500;
+  padding:7px 14px;cursor:pointer;transition:.18s;
+}
+.lang button.on{background:linear-gradient(135deg,var(--violet),var(--magenta));color:#fff}
+.burger{display:none;background:none;border:0;cursor:pointer;padding:8px}
+.burger span{display:block;width:23px;height:2px;background:var(--text);margin:5px 0;transition:.25s}
+.burger.on span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.on span:nth-child(2){opacity:0}
+.burger.on span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;padding:118px 0 96px;overflow:hidden}
+.glow{
+  position:absolute;inset:auto;width:900px;height:900px;border-radius:50%;
+  background:radial-gradient(circle,rgba(139,92,246,.26),rgba(192,38,211,.09) 42%,transparent 68%);
+  top:-420px;left:50%;transform:translateX(-50%);pointer-events:none;
+}
+.hero-inner{position:relative;max-width:860px}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;font-size:13.5px;color:var(--violet-soft);
+  border:1px solid var(--line);border-radius:999px;padding:7px 15px;margin-bottom:30px;
+}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--violet-soft)}
+h1{
+  font-family:var(--serif);font-weight:400;font-size:clamp(44px,6.4vw,80px);
+  line-height:1.04;letter-spacing:-.015em;
+}
+.grad{background:linear-gradient(110deg,var(--violet-soft),var(--magenta));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{font-size:19px;color:var(--muted);max-width:620px;margin-top:26px}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:11px;
+  font-size:15.5px;font-weight:500;transition:transform .16s,box-shadow .16s,background .16s;
+}
+.btn-primary{background:linear-gradient(135deg,var(--violet),var(--magenta));color:#fff;box-shadow:0 10px 32px rgba(139,92,246,.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(139,92,246,.42)}
+.btn-ghost{border:1px solid var(--line);color:var(--text)}
+.btn-ghost:hover{background:rgba(139,92,246,.1)}
+.hero-meta{display:flex;flex-wrap:wrap;gap:38px;margin-top:62px;padding-top:34px;border-top:1px solid var(--line)}
+.hero-meta div{min-width:130px}
+.hero-meta b{display:block;font-family:var(--serif);font-size:34px;font-weight:400;line-height:1}
+.hero-meta small{color:var(--muted);font-size:14px;display:block;margin-top:7px}
+
+/* ---------- SECTIONS ---------- */
+section{padding:96px 0}
+.sec-head{max-width:620px;margin-bottom:56px}
+.sec-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(32px,4.2vw,48px);line-height:1.12;letter-spacing:-.01em}
+.sec-head p{color:var(--muted);margin-top:16px;font-size:17px}
+
+/* Destinations — cartes offres */
+.dest{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
+.card{
+  position:relative;display:flex;flex-direction:column;overflow:hidden;
+  border:1px solid var(--line);border-radius:20px;background:var(--surface);
+  transition:transform .22s,border-color .22s,box-shadow .22s;
+}
+.card:hover{transform:translateY(-5px);border-color:rgba(167,139,250,.4);box-shadow:0 26px 56px rgba(0,0,0,.5)}
+.card.featured{border-color:rgba(167,139,250,.45);background:linear-gradient(175deg,rgba(139,92,246,.11),var(--surface) 42%)}
+.badge{
+  position:absolute;top:16px;right:16px;z-index:3;font-size:12.5px;font-weight:500;
+  padding:6px 13px;border-radius:999px;color:#fff;
+  background:linear-gradient(135deg,var(--violet),var(--magenta));
+}
+.card-media{position:relative;height:132px;background-size:cover;background-position:center}
+.card-media::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(5,5,10,.1) 0%,rgba(5,5,10,.75) 72%,var(--surface) 100%);
+}
+.card-dubai{background-image:url('img/dubai.jpg'),linear-gradient(150deg,#C99A3B,#7A3E8F 58%,#3B1D5A)}
+.card-espagne{background-image:url('img/espagne.jpg'),linear-gradient(150deg,#D9534F,#B03A78 55%,#3B1D5A)}
+.card-malte{background-image:url('img/malte.jpg'),linear-gradient(150deg,#2E9BC4,#6B4BC4 58%,#3B1D5A)}
+.flag{
+  position:absolute;top:16px;left:18px;z-index:2;width:36px;height:25px;border-radius:5px;
+  overflow:hidden;box-shadow:0 3px 12px rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.24);
+}
+.flag svg{display:block;width:100%;height:100%}
+.card-body{padding:0 26px 26px;margin-top:-34px;position:relative;z-index:2;display:flex;flex-direction:column;flex:1}
+.dest-name{font-family:var(--serif);font-size:34px;line-height:1.05}
+.dest-name em{display:block;font-family:var(--sans);font-style:normal;font-size:13px;color:var(--muted);margin-top:8px}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin:18px 0 22px}
+.tag{border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:13px;color:var(--text);background:rgba(255,255,255,.03)}
+.price-box{
+  border:1px solid var(--line);border-radius:13px;padding:18px 20px;background:rgba(255,255,255,.025);
+}
+.price{display:flex;align-items:baseline;gap:8px}
+.price b{font-family:var(--serif);font-size:40px;font-weight:400;line-height:1}
+.price span{color:var(--muted);font-size:14px}
+.price-note{color:var(--muted);font-size:13.5px;margin-top:9px;line-height:1.5}
+.feat-title{font-size:13.5px;color:var(--muted);margin:26px 0 14px}
+.feats{list-style:none;display:grid;gap:11px}
+.feats li{display:flex;gap:11px;align-items:flex-start;font-size:14.5px;line-height:1.5}
+.feats svg{flex:none;margin-top:4px;color:var(--violet-soft)}
+.card-cta{
+  display:flex;align-items:center;justify-content:center;gap:9px;
+  margin-top:26px;padding:14px 20px;border-radius:11px;font-size:15px;font-weight:500;
+  border:1px solid var(--line);color:var(--text);transition:.18s;
+}
+.card:hover .card-cta{background:linear-gradient(135deg,var(--violet),var(--magenta));border-color:transparent;color:#fff}
+.card.featured .card-cta{background:linear-gradient(135deg,var(--violet),var(--magenta));border-color:transparent;color:#fff}
+
+/* Partenaires */
+.partners{border-top:1px solid var(--line);text-align:center}
+.partners h2{font-family:var(--serif);font-weight:400;font-size:clamp(30px,4vw,44px);margin-bottom:14px}
+.partners p{color:var(--muted);max-width:520px;margin:0 auto 46px}
+.partner-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:18px}
+.partner{
+  width:172px;height:104px;border-radius:16px;background:var(--surface-2);
+  border:1px solid var(--line);display:grid;place-items:center;padding:22px;
+  transition:border-color .2s,background .2s;
+}
+.partner:hover{border-color:rgba(167,139,250,.36);background:#171227}
+.partner img{max-height:100%;max-width:100%;object-fit:contain;opacity:.86;filter:grayscale(1) brightness(1.7)}
+.partner:hover img{opacity:1}
+
+/* Étapes */
+.steps{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.step-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--line)}
+.step{background:var(--surface);padding:34px 28px}
+.step-n{font-family:var(--serif);font-size:15px;color:var(--violet-soft);margin-bottom:18px}
+.step h3{font-size:18px;font-weight:600;margin-bottom:10px}
+.step p{color:var(--muted);font-size:15px}
+
+/* Garanties */
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.trust{border:1px solid var(--line);border-radius:16px;padding:32px;background:linear-gradient(160deg,var(--surface-2),transparent)}
+.trust h3{font-size:18px;font-weight:600;margin-bottom:12px}
+.trust p{color:var(--muted);font-size:15px}
+
+/* Emplois teaser */
+.jobs{
+  border:1px solid var(--line);border-radius:22px;padding:56px;
+  background:radial-gradient(120% 140% at 12% 0%,rgba(139,92,246,.16),transparent 58%),var(--surface);
+  display:flex;flex-wrap:wrap;gap:32px;align-items:center;justify-content:space-between;
+}
+.jobs h2{font-family:var(--serif);font-weight:400;font-size:clamp(28px,3.6vw,40px);line-height:1.15;max-width:520px}
+.jobs p{color:var(--muted);margin-top:14px;max-width:480px}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+form{display:grid;gap:16px}
+label{font-size:14px;color:var(--muted);display:block;margin-bottom:7px}
+input,select,textarea{
+  width:100%;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;
+  padding:13px 15px;color:var(--text);font:inherit;font-size:15.5px;
+}
+input:focus,select,textarea:focus{border-color:var(--violet)}
+textarea{min-height:118px;resize:vertical}
+.contact-side p{color:var(--muted);margin-bottom:26px}
+.contact-line{display:flex;gap:14px;align-items:flex-start;padding:18px 0;border-top:1px solid var(--line)}
+.contact-line b{display:block;font-size:15px;font-weight:600}
+.contact-line span{color:var(--muted);font-size:14.5px}
+
+/* Footer */
+footer{border-top:1px solid var(--line);padding:56px 0 40px;color:var(--muted);font-size:14.5px}
+.foot-top{display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between;margin-bottom:38px}
+.foot-links{display:flex;flex-wrap:wrap;gap:26px}
+.foot-links a:hover{color:var(--text)}
+.legal{border-top:1px solid var(--line);padding-top:26px;font-size:13.5px;line-height:1.7;max-width:820px}
+
+/* WhatsApp */
+.wa{
+  position:fixed;right:22px;bottom:22px;z-index:80;
+  width:58px;height:58px;border-radius:50%;background:#25D366;
+  display:grid;place-items:center;box-shadow:0 10px 30px rgba(37,211,102,.36);
+  transition:transform .18s;
+}
+.wa:hover{transform:scale(1.07)}
+.wa svg{width:31px;height:31px;fill:#fff}
+
+@media(max-width:900px){
+  .step-grid{grid-template-columns:repeat(2,1fr)}
+  .trust-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr;gap:44px}
+  .dest{grid-template-columns:1fr;gap:20px}
+  .partner{width:140px;height:88px}
+  .jobs{padding:38px}
+}
+@media(max-width:760px){
+  .burger{display:block}
+  .nav-links{
+    position:fixed;inset:74px 0 auto 0;flex-direction:column;align-items:flex-start;gap:0;
+    background:var(--ink);border-bottom:1px solid var(--line);padding:12px 24px 26px;
+    display:none;
+  }
+  .nav-links.open{display:flex}
+  .nav-links>a,.drop{width:100%;padding:15px 0;border-bottom:1px solid var(--line)}
+  .drop-menu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;background:none;border:0;padding:10px 0 0;display:none}
+  .drop.open .drop-menu{display:block}
+  .drop-menu a{padding:10px 0}
+  .hero{padding:76px 0 68px}
+  section{padding:70px 0}
+  .step-grid{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="logo"><img src="logo-agd.png" alt="AGD Business Services"></a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
+      <div class="drop" id="drop">
+        <button type="button" id="dropBtn" aria-expanded="false">
+          <span data-fr="Nos visas" data-en="Our visas">Nos visas</span>
+          <svg width="11" height="7" viewBox="0 0 11 7" fill="none"><path d="M1 1l4.5 4.5L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+        <div class="drop-menu">
+          <a href="visa-dubai.html">Dubaï<span data-fr="Freelance · Business · Salarié" data-en="Freelance · Business · Employment">Freelance · Business · Salarié</span></a>
+          <a href="visa-espagne.html">Espagne<span data-fr="Tourisme · Freelance · Non lucratif" data-en="Tourist · Freelance · Non-lucrative">Tourisme · Freelance · Non lucratif</span></a>
+          <a href="visa-malte.html">Malte<span data-fr="Freelance · Nomad Residence" data-en="Freelance · Nomad Residence">Freelance · Nomad Residence</span></a>
+        </div>
+      </div>
+      <a href="emplois.html" data-fr="Offres d'emploi" data-en="Job offers">Offres d'emploi</a>
+      <a href="#contact" data-fr="Contact" data-en="Contact">Contact</a>
+    </nav>
+
+    <div style="display:flex;align-items:center;gap:14px">
+      <div class="lang">
+        <button type="button" class="on" data-lang="fr">FR</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="glow"></div>
+  <div class="wrap hero-inner">
+    <span class="eyebrow"><span class="dot"></span><span data-fr="Cabinet basé à Dubaï" data-en="Based in Dubai">Cabinet basé à Dubaï</span></span>
+    <h1 data-fr="Votre dossier de visa, monté &lt;span class=&quot;grad&quot;&gt;proprement&lt;/span&gt;." data-en="Your visa file, built &lt;span class=&quot;grad&quot;&gt;properly&lt;/span&gt;.">Votre dossier de visa, monté <span class="grad">proprement</span>.</h1>
+    <p class="lede" data-fr="AGD Business Services accompagne les francophones qui s'installent à Dubaï, en Espagne ou à Malte. On analyse votre situation, on choisit le bon statut, et on prépare chaque pièce du dossier avec vous." data-en="AGD Business Services guides French speakers relocating to Dubai, Spain or Malta. We assess your situation, pick the right status, and prepare every document with you.">AGD Business Services accompagne les francophones qui s'installent à Dubaï, en Espagne ou à Malte. On analyse votre situation, on choisit le bon statut, et on prépare chaque pièce du dossier avec vous.</p>
+    <div class="cta-row">
+      <a href="#destinations" class="btn btn-primary" data-fr="Voir les visas" data-en="See the visas">Voir les visas</a>
+      <a href="#contact" class="btn btn-ghost" data-fr="Parler à un conseiller" data-en="Talk to an advisor">Parler à un conseiller</a>
+    </div>
+    <div class="hero-meta">
+      <div><b>3</b><small data-fr="destinations couvertes" data-en="destinations covered">destinations couvertes</small></div>
+      <div><b>7</b><small data-fr="types de visa proposés" data-en="visa types offered">types de visa proposés</small></div>
+      <div><b>90 j</b><small data-fr="garantie de remboursement" data-en="money-back guarantee">garantie de remboursement</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- DESTINATIONS -->
+<section id="destinations">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-fr="Trois destinations, sept statuts" data-en="Three destinations, seven statuses">Trois destinations, sept statuts</h2>
+      <p data-fr="Chaque pays a ses propres règles de résidence. On vous oriente vers celui qui correspond réellement à votre activité et à vos revenus." data-en="Each country has its own residency rules. We point you to the one that actually fits your activity and income.">Chaque pays a ses propres règles de résidence. On vous oriente vers celui qui correspond réellement à votre activité et à vos revenus.</p>
+    </div>
+
+    <div class="dest">
+
+      <a class="card featured" href="visa-dubai.html">
+        <span class="badge" data-fr="Le plus demandé" data-en="Most requested">Le plus demandé</span>
+        <div class="card-media card-dubai"><span class="flag"><svg viewBox="0 0 60 40"><rect width="20" height="40" fill="#CE1126"/><rect x="20" width="40" height="13.34" fill="#009739"/><rect x="20" y="13.34" width="40" height="13.33" fill="#fff"/><rect x="20" y="26.67" width="40" height="13.33" fill="#000"/></svg></span></div>
+        <div class="card-body">
+          <div class="dest-name">Dubaï<em data-fr="Émirats arabes unis" data-en="United Arab Emirates">Émirats arabes unis</em></div>
+          <div class="tags">
+            <span class="tag">Freelance</span>
+            <span class="tag">Business</span>
+            <span class="tag" data-fr="Salarié" data-en="Employment">Salarié</span>
+          </div>
+          <div class="price-box">
+            <div class="price"><b>5 000 €</b><span data-fr="d'honoraires" data-en="in fees">d'honoraires</span></div>
+            <div class="price-note" data-fr="Frais officiels des Émirats en sus, facturés au réel. Paiement en deux fois." data-en="UAE government fees charged separately at cost. Payable in two instalments.">Frais officiels des Émirats en sus, facturés au réel. Paiement en deux fois.</div>
+          </div>
+          <div class="feat-title" data-fr="Ce que comprend l'accompagnement" data-en="What the service covers">Ce que comprend l'accompagnement</div>
+          <ul class="feats">
+            <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M13.5 4.5l-7 7L3 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-fr="Bilan de situation et choix du statut" data-en="Situation review and status selection">Bilan de situation et choix du statut</span></li>
+            <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M13.5 4.5l-7 7L3 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-fr="Création de la structure ou du sponsor" data-en="Company or sponsor setup">Création de la structure ou du sponsor</span></li>
+            <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M13.5 4.5l-7 7L3 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-fr="Entry permit et changement de statut" data-en="Entry permit and status change">Entry permit et changement de statut</span></li>
+            <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M13.5 4.5l-7 7L3 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-fr="Emirates ID et test médical" data-en="Emirates ID and medical test">Emirates ID et test médical</span></li>
+            <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M13.5 4.5l-7 7L3 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-fr="Ouverture de compte bancaire" data-en="Bank account opening">Ouverture de compte bancaire</span></li>
+            <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M13.5 4.5l-7 7L3 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-fr="Suivi WhatsApp pendant toute la procédure" data-en="WhatsApp follow-up throughout">Suivi WhatsApp pendant toute la procédure</span></li>
+          </ul>
+          <span class="card-cta"><span data-fr="Découvrir les visas" data-en="Explore the visas">Découvrir les visas</span><svg width="16" height="11" viewBox="0 0 17 11" fill="none"><path d="M1 5.5h14M11 1l4.5 4.5L11 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+
+      <a class="card" href="visa-espagne.html">
+        <div class="card-media card-espagne"><span class="flag"><svg viewBox="0 0 60 40"><rect width="60" height="40" fill="#AA151B"/><rect y="10" width="60" height="20" fill="#F1BF00"/></svg></span></div>
+        <div class="card-body">
+          <div class="dest-name" data-fr="Espagne&lt;em&gt;Union européenne · Schengen&lt;/em&gt;" data-en="Spain&lt;em&gt;European Union · Schengen&lt;/em&gt;">Espagne<em>Union européenne · Schengen</em></div>
+          <div class="tags">
+            <span class="tag" data-fr="Tourisme" data-en="Tourist">Tourisme</span>
+            <span class="tag">Freelance</span>
+            <span class="tag" data-fr="Non lucratif" data-en="Non-lucrative">Non lucratif</span>
+          </div>
+          <div class="price-box">
+            <div class="price"><b>5 000 €</b><span data-fr="d'honoraires" data-en="in fees">d'honoraires</span></div>
+            <div class="price-note" data-fr="Frais consulaires et traductions en sus, facturés au réel. Paiement en deux fois." data-en="Consular fees and translations charged separately at cost. Payable in two instalments.">Frais consulaires et traductions en sus, facturés au réel. Paiement en deux fois.</div>
+          </div>
+          <div class="feat-title" data-fr="Ce que comprend l'accompagnement" data-en="What the service covers">Ce que comprend l'accompagnement</div>
+          <ul class="feats">
+            <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M13.5 4.5l-7 7L3 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-fr="Bilan de situation et choix du visa" data-en="Situation review and visa selection">Bilan de situation et choix du visa</span></li>
+            <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M13.5 4.5l-7 7L3 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-fr="Dossier consulaire complet" data-en="Complete consular file">Dossier consulaire complet</span></li>
+            <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M13.5 4.5l-7 7L3 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-fr="Traductions assermentées et apostilles" data-en="Sworn translations and apostilles">Traductions assermentées et apostilles</span></li>
+            <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M13.5 4.5l-7 7L3 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-fr="Justificatifs de revenus et assurance" data-en="Income proof and insurance">Justificatifs de revenus et assurance</span></li>
+            <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M13.5 4.5l-7 7L3 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-fr="Prise de rendez-vous au consulat" data-en="Consulate appointment booking">Prise de rendez-vous au consulat</span></li>
+            <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M13.5 4.5l-7 7L3 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-fr="Accompagnement à l'arrivée (NIE, empadronamiento)" data-en="Arrival support (NIE, empadronamiento)">Accompagnement à l'arrivée (NIE, empadronamiento)</span></li>
+          </ul>
+          <span class="card-cta"><span data-fr="Découvrir les visas" data-en="Explore the visas">Découvrir les visas</span><svg width="16" height="11" viewBox="0 0 17 11" fill="none"><path d="M1 5.5h14M11 1l4.5 4.5L11 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+
+      <a class="card" href="visa-malte.html">
+        <div class="card-media card-malte"><span class="flag"><svg viewBox="0 0 60 40"><rect width="30" height="40" fill="#fff"/><rect x="30" width="30" height="40" fill="#CF142B"/><rect x="4" y="6" width="13" height="13" fill="none" stroke="#B9B9B9" stroke-width="1"/><path d="M9.2 8.5h3v2.6h2.6v3h-2.6v2.6h-3v-2.6H6.6v-3h2.6z" fill="#C1B49A"/></svg></span></div>
+        <div class="card-body">
+          <div class="dest-name">Malte<em data-fr="Union européenne · Schengen" data-en="European Union · Schengen">Union européenne · Schengen</em></div>
+          <div class="tags">
+            <span class="tag">Freelance</span>
+            <span class="tag">Nomad Residence Permit</span>
+          </div>
+          <div class="price-box">
+            <div class="price"><b>5 000 €</b><span data-fr="d'honoraires" data-en="in fees">d'honoraires</span></div>
+            <div class="price-note" data-fr="Frais de dossier maltais en sus, facturés au réel. Paiement en deux fois." data-en="Maltese application fees charged separately at cost. Payable in two instalments.">Frais de dossier maltais en sus, facturés au réel. Paiement en deux fois.</div>
+          </div>
+          <div class="feat-title" data-fr="Ce que comprend l'accompagnement" data-en="What the service covers">Ce que comprend l'accompagnement</div>
+          <ul class="feats">
+            <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M13.5 4.5l-7 7L3 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-fr="Bilan d'éligibilité au Nomad Residence Permit" data-en="Nomad Residence Permit eligibility check">Bilan d'éligibilité au Nomad Residence Permit</span></li>
+            <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M13.5 4.5l-7 7L3 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-fr="Constitution et dépôt du dossier" data-en="File preparation and submission">Constitution et dépôt du dossier</span></li>
+            <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M13.5 4.5l-7 7L3 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-fr="Contrats clients et justificatifs de revenus" data-en="Client contracts and income proof">Contrats clients et justificatifs de revenus</span></li>
+            <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M13.5 4.5l-7 7L3 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-fr="Assurance santé et attestation de logement" data-en="Health insurance and housing proof">Assurance santé et attestation de logement</span></li>
+            <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M13.5 4.5l-7 7L3 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-fr="Suivi jusqu'à la carte de résidence" data-en="Follow-up until the residence card">Suivi jusqu'à la carte de résidence</span></li>
+            <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M13.5 4.5l-7 7L3 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-fr="Accompagnement bancaire sur place" data-en="Local banking support">Accompagnement bancaire sur place</span></li>
+          </ul>
+          <span class="card-cta"><span data-fr="Découvrir les visas" data-en="Explore the visas">Découvrir les visas</span><svg width="16" height="11" viewBox="0 0 17 11" fill="none"><path d="M1 5.5h14M11 1l4.5 4.5L11 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ÉTAPES -->
+<section class="steps">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-fr="Comment on travaille" data-en="How we work">Comment on travaille</h2>
+      <p data-fr="Un parcours en quatre temps, du premier échange jusqu'à votre arrivée." data-en="A four-stage process, from the first call to your arrival.">Un parcours en quatre temps, du premier échange jusqu'à votre arrivée.</p>
+    </div>
+    <div class="step-grid">
+      <div class="step">
+        <div class="step-n">01</div>
+        <h3 data-fr="Échange gratuit" data-en="Free consultation">Échange gratuit</h3>
+        <p data-fr="On fait le point sur votre activité, vos revenus et votre situation familiale pour identifier le statut adapté." data-en="We review your activity, income and family situation to identify the right status.">On fait le point sur votre activité, vos revenus et votre situation familiale pour identifier le statut adapté.</p>
+      </div>
+      <div class="step">
+        <div class="step-n">02</div>
+        <h3 data-fr="Constitution du dossier" data-en="Building the file">Constitution du dossier</h3>
+        <p data-fr="Liste précise des pièces, traductions, légalisations. On vérifie chaque document avant dépôt." data-en="Precise document list, translations, legalisations. Every document checked before filing.">Liste précise des pièces, traductions, légalisations. On vérifie chaque document avant dépôt.</p>
+      </div>
+      <div class="step">
+        <div class="step-n">03</div>
+        <h3 data-fr="Dépôt et suivi" data-en="Filing and follow-up">Dépôt et suivi</h3>
+        <p data-fr="Le dossier part auprès de l'autorité compétente. Vous êtes tenu informé à chaque étape." data-en="The file goes to the relevant authority. You're kept informed at each step.">Le dossier part auprès de l'autorité compétente. Vous êtes tenu informé à chaque étape.</p>
+      </div>
+      <div class="step">
+        <div class="step-n">04</div>
+        <h3 data-fr="Installation" data-en="Settling in">Installation</h3>
+        <p data-fr="Décision rendue, on vous accompagne sur les démarches d'arrivée : banque, logement, immatriculation." data-en="Once the decision lands, we help with arrival steps: banking, housing, registration.">Décision rendue, on vous accompagne sur les démarches d'arrivée : banque, logement, immatriculation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GARANTIES -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-fr="Ce que vous pouvez attendre de nous" data-en="What you can expect from us">Ce que vous pouvez attendre de nous</h2>
+    </div>
+    <div class="trust-grid">
+      <div class="trust">
+        <h3 data-fr="Un prix annoncé à l'avance" data-en="A price stated upfront">Un prix annoncé à l'avance</h3>
+        <p data-fr="Nos honoraires sont fixés avant de commencer. Les frais officiels de dossier sont indiqués séparément, sans marge de notre côté." data-en="Our fee is agreed before we start. Official government fees are listed separately, with no markup from us.">Nos honoraires sont fixés avant de commencer. Les frais officiels de dossier sont indiqués séparément, sans marge de notre côté.</p>
+      </div>
+      <div class="trust">
+        <h3 data-fr="Garantie 90 jours" data-en="90-day guarantee">Garantie 90 jours</h3>
+        <p data-fr="Si le dossier n'aboutit pas dans les conditions prévues au contrat, nos honoraires vous sont remboursés sous 90 jours." data-en="If the file doesn't succeed under the terms of the contract, our fee is refunded within 90 days.">Si le dossier n'aboutit pas dans les conditions prévues au contrat, nos honoraires vous sont remboursés sous 90 jours.</p>
+      </div>
+      <div class="trust">
+        <h3 data-fr="Un interlocuteur unique" data-en="A single point of contact">Un interlocuteur unique</h3>
+        <p data-fr="La même personne suit votre dossier du début à la fin, joignable sur WhatsApp aux horaires de bureau." data-en="The same person handles your file from start to finish, reachable on WhatsApp during office hours.">La même personne suit votre dossier du début à la fin, joignable sur WhatsApp aux horaires de bureau.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMPLOIS -->
+<section>
+  <div class="wrap">
+    <div class="jobs">
+      <div>
+        <h2 data-fr="Des offres d'emploi à l'étranger, mises à jour chaque semaine" data-en="Job openings abroad, updated every week">Des offres d'emploi à l'étranger, mises à jour chaque semaine</h2>
+        <p data-fr="Hôtellerie, construction, logistique, tech. Les postes que nous relayons précisent le pays, le salaire et le type de contrat." data-en="Hospitality, construction, logistics, tech. Every listing states the country, salary and contract type.">Hôtellerie, construction, logistique, tech. Les postes que nous relayons précisent le pays, le salaire et le type de contrat.</p>
+      </div>
+      <a href="emplois.html" class="btn btn-primary" data-fr="Voir les offres" data-en="Browse openings">Voir les offres</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="sec-head" style="margin-bottom:34px">
+        <h2 data-fr="Parlons de votre projet" data-en="Let's talk about your plan">Parlons de votre projet</h2>
+        <p data-fr="Le premier échange est gratuit et sans engagement. Réponse sous 24 h ouvrées." data-en="The first conversation is free and without commitment. Reply within 24 working hours.">Le premier échange est gratuit et sans engagement. Réponse sous 24 h ouvrées.</p>
+      </div>
+      <form id="contactForm">
+        <div>
+          <label for="f-name" data-fr="Nom complet" data-en="Full name">Nom complet</label>
+          <input id="f-name" name="nom" type="text" required>
+        </div>
+        <div>
+          <label for="f-mail" data-fr="Adresse e-mail" data-en="Email address">Adresse e-mail</label>
+          <input id="f-mail" name="email" type="email" required>
+        </div>
+        <div>
+          <label for="f-phone" data-fr="Téléphone (WhatsApp)" data-en="Phone (WhatsApp)">Téléphone (WhatsApp)</label>
+          <input id="f-phone" name="telephone" type="tel">
+        </div>
+        <div>
+          <label for="f-visa" data-fr="Visa souhaité" data-en="Visa of interest">Visa souhaité</label>
+          <select id="f-visa" name="visa">
+            <option>Dubaï — Freelance</option>
+            <option>Dubaï — Business</option>
+            <option data-fr="Dubaï — Salarié" data-en="Dubai — Employment">Dubaï — Salarié</option>
+            <option data-fr="Espagne — Tourisme" data-en="Spain — Tourist">Espagne — Tourisme</option>
+            <option data-fr="Espagne — Freelance" data-en="Spain — Freelance">Espagne — Freelance</option>
+            <option data-fr="Espagne — Non lucratif" data-en="Spain — Non-lucrative">Espagne — Non lucratif</option>
+            <option data-fr="Malte — Freelance" data-en="Malta — Freelance">Malte — Freelance</option>
+            <option data-fr="Je ne sais pas encore" data-en="Not sure yet">Je ne sais pas encore</option>
+          </select>
+        </div>
+        <div>
+          <label for="f-msg" data-fr="Votre situation en quelques lignes" data-en="Your situation in a few lines">Votre situation en quelques lignes</label>
+          <textarea id="f-msg" name="message"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="justify-content:center;border:0;cursor:pointer;font-family:inherit" data-fr="Envoyer ma demande" data-en="Send my request">Envoyer ma demande</button>
+      </form>
+    </div>
+
+    <div class="contact-side">
+      <div class="contact-line">
+        <div><b>WhatsApp</b><span>+971 52 602 0915</span></div>
+      </div>
+      <div class="contact-line">
+        <div><b>E-mail</b><span>contact@agd-visa.com</span></div>
+      </div>
+      <div class="contact-line">
+        <div><b data-fr="Bureau" data-en="Office">Bureau</b><span>Dubaï, Émirats arabes unis</span></div>
+      </div>
+      <div class="contact-line">
+        <div><b data-fr="Horaires" data-en="Hours">Horaires</b><span data-fr="Dimanche – jeudi, 9 h – 18 h (GST)" data-en="Sunday – Thursday, 9am – 6pm (GST)">Dimanche – jeudi, 9 h – 18 h (GST)</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTENAIRES -->
+<section class="partners">
+  <div class="wrap">
+    <h2 data-fr="Nos partenaires" data-en="Our partners">Nos partenaires</h2>
+    <p data-fr="Nous travaillons avec des cabinets, autorités de zone franche et prestataires locaux dans chacun des pays couverts." data-en="We work with law firms, free-zone authorities and local providers in every country we cover.">Nous travaillons avec des cabinets, autorités de zone franche et prestataires locaux dans chacun des pays couverts.</p>
+    <div class="partner-grid">
+      <div class="partner"><img src="img/partenaire-1.png" alt=""></div>
+      <div class="partner"><img src="img/partenaire-2.png" alt=""></div>
+      <div class="partner"><img src="img/partenaire-3.png" alt=""></div>
+      <div class="partner"><img src="img/partenaire-4.png" alt=""></div>
+      <div class="partner"><img src="img/partenaire-5.png" alt=""></div>
+      <div class="partner"><img src="img/partenaire-6.png" alt=""></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <a href="index.html" class="logo"><img src="logo-agd.png" alt="AGD Business Services"></a>
+      <div class="foot-links">
+        <a href="visa-dubai.html">Dubaï</a>
+        <a href="visa-espagne.html" data-fr="Espagne" data-en="Spain">Espagne</a>
+        <a href="visa-malte.html">Malte</a>
+        <a href="emplois.html" data-fr="Offres d'emploi" data-en="Job offers">Offres d'emploi</a>
+        <a href="mentions-legales.html" data-fr="Mentions légales" data-en="Legal notice">Mentions légales</a>
+        <a href="cgv.html" data-fr="CGV" data-en="Terms">CGV</a>
+        <a href="confidentialite.html" data-fr="Confidentialité" data-en="Privacy">Confidentialité</a>
+      </div>
+    </div>
+    <p class="legal" data-fr="AGD Business Services est un cabinet de conseil privé établi à Dubaï. Nous accompagnons la préparation et le dépôt des dossiers de visa. Nous ne sommes ni une administration, ni un service consulaire, et la délivrance d'un visa relève exclusivement de la décision des autorités compétentes du pays concerné. © 2026 AGD. Tous droits réservés." data-en="AGD Business Services is a private consultancy based in Dubai. We assist with preparing and filing visa applications. We are neither a government body nor a consular service, and granting a visa is solely the decision of the competent authorities of the country concerned. © 2026 AGD. All rights reserved.">AGD Business Services est un cabinet de conseil privé établi à Dubaï. Nous accompagnons la préparation et le dépôt des dossiers de visa. Nous ne sommes ni une administration, ni un service consulaire, et la délivrance d'un visa relève exclusivement de la décision des autorités compétentes du pays concerné. © 2026 AGD. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/971526020915" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.12-.27-.2-.57-.35zM12.04 21.5h-.01a9.4 9.4 0 01-4.79-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.38 9.38 0 01-1.44-5.01c0-5.18 4.22-9.4 9.41-9.4a9.35 9.35 0 016.65 2.76 9.32 9.32 0 012.75 6.65c0 5.19-4.22 9.41-9.4 9.41zM20.52 3.48A11.78 11.78 0 0012.04 0C5.5 0 .18 5.32.18 11.86c0 2.09.55 4.13 1.59 5.93L.08 24l6.35-1.66a11.83 11.83 0 005.61 1.43h.01c6.54 0 11.86-5.32 11.86-11.86 0-3.17-1.23-6.15-3.39-8.39z"/></svg>
+</a>
+
+<script>
+(function(){
+  // --- Langue ---
+  var lang = 'fr';
+  var nodes = document.querySelectorAll('[data-fr]');
+  function setLang(l){
+    lang = l;
+    document.documentElement.lang = l;
+    nodes.forEach(function(n){
+      var v = n.getAttribute('data-' + l);
+      if(v !== null) n.innerHTML = v;
+    });
+    document.querySelectorAll('.lang button').forEach(function(b){
+      b.classList.toggle('on', b.dataset.lang === l);
+    });
+  }
+  document.querySelectorAll('.lang button').forEach(function(b){
+    b.addEventListener('click', function(){ setLang(b.dataset.lang); });
+  });
+
+  // --- Menu déroulant visas ---
+  var drop = document.getElementById('drop');
+  var dropBtn = document.getElementById('dropBtn');
+  dropBtn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var open = drop.classList.toggle('open');
+    dropBtn.setAttribute('aria-expanded', open);
+  });
+  document.addEventListener('click', function(){
+    drop.classList.remove('open');
+    dropBtn.setAttribute('aria-expanded', false);
+  });
+
+  // --- Menu mobile ---
+  var burger = document.getElementById('burger');
+  var links = document.getElementById('navLinks');
+  burger.addEventListener('click', function(){
+    burger.classList.toggle('on');
+    links.classList.toggle('open');
+  });
+
+  // --- Formulaire (à connecter) ---
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    alert(lang === 'fr'
+      ? 'Formulaire pas encore connecté — dis-moi où tu veux recevoir les demandes.'
+      : 'Form not connected yet.');
+  });
+})();
+</script>
+</body>
+</html>
