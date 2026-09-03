@@ -181,6 +181,30 @@ section{padding:96px 0}
 .card:hover .card-cta{background:linear-gradient(135deg,var(--violet),var(--magenta));border-color:transparent;color:#fff}
 .card.featured .card-cta{background:linear-gradient(135deg,var(--violet),var(--magenta));border-color:transparent;color:#fff}
 
+/* FAQ */
+.faq .sec-head{max-width:620px}
+.faq-list{max-width:900px;margin:0 auto;border-top:1px solid var(--line)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{
+  width:100%;display:flex;align-items:center;gap:20px;text-align:left;
+  background:none;border:0;color:var(--text);font:inherit;cursor:pointer;
+  padding:24px 4px;transition:color .18s;
+}
+.faq-q:hover{color:var(--violet-soft)}
+.faq-n{flex:none;font-family:var(--serif);font-size:19px;color:var(--violet-soft);min-width:34px}
+.faq-t{flex:1;font-size:17.5px;font-weight:500;line-height:1.4}
+.faq-chev{flex:none;color:var(--muted);transition:transform .25s}
+.faq-item.open .faq-chev{transform:rotate(180deg);color:var(--violet-soft)}
+.faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease}
+.faq-item.open .faq-a{grid-template-rows:1fr}
+.faq-a>div{overflow:hidden}
+.faq-a p{color:var(--muted);font-size:15.5px;line-height:1.65;padding:0 4px 26px 54px;max-width:76ch}
+@media(max-width:640px){
+  .faq-q{gap:13px;padding:20px 2px}
+  .faq-t{font-size:16px}
+  .faq-a p{padding-left:0}
+}
+
 /* Partenaires */
 .partners{border-top:1px solid var(--line);text-align:center}
 .partners h2{font-family:var(--serif);font-weight:400;font-size:clamp(30px,4vw,44px);margin-bottom:14px}
@@ -544,6 +568,107 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;color:var(--muted);f
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="faq">
+  <div class="wrap">
+    <div class="sec-head" style="margin:0 auto 48px;text-align:center">
+      <h2 data-fr="Questions fréquentes" data-en="Frequently asked questions">Questions fréquentes</h2>
+      <p data-fr="Les réponses aux questions que l&#39;on nous pose avant de s&#39;engager." data-en="Answers to what people ask us before committing.">Les réponses aux questions que l&#39;on nous pose avant de s&#39;engager.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span class="faq-n">Q1</span>
+          <span class="faq-t" data-fr="Garantissez-vous l&#x27;obtention du visa ?" data-en="Do you guarantee the visa will be granted?">Garantissez-vous l'obtention du visa ?</span>
+          <svg class="faq-chev" width="13" height="8" viewBox="0 0 11 7" fill="none"><path d="M1 1l4.5 4.5L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+        <div class="faq-a"><div><p data-fr="Non, et personne ne peut le garantir honnêtement. La décision appartient exclusivement aux autorités du pays concerné. Ce que nous garantissons, c&#x27;est un dossier complet, conforme et déposé dans les règles — ce qui est précisément ce qui fait échouer la majorité des demandes lorsqu&#x27;il est négligé. Si nous estimons que votre profil n&#x27;a aucune chance d&#x27;aboutir, nous vous le disons avant de prendre votre argent." data-en="No, and nobody can honestly guarantee it. The decision rests solely with the authorities of the country concerned. What we do guarantee is a complete, compliant application filed properly — which is exactly what sinks most applications when it&#x27;s neglected. If we believe your profile has no chance, we tell you before taking your money.">Non, et personne ne peut le garantir honnêtement. La décision appartient exclusivement aux autorités du pays concerné. Ce que nous garantissons, c'est un dossier complet, conforme et déposé dans les règles — ce qui est précisément ce qui fait échouer la majorité des demandes lorsqu'il est négligé. Si nous estimons que votre profil n'a aucune chance d'aboutir, nous vous le disons avant de prendre votre argent.</p></div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span class="faq-n">Q2</span>
+          <span class="faq-t" data-fr="Comment fonctionne la garantie satisfait ou remboursé ?" data-en="How does the money-back guarantee work?">Comment fonctionne la garantie satisfait ou remboursé ?</span>
+          <svg class="faq-chev" width="13" height="8" viewBox="0 0 11 7" fill="none"><path d="M1 1l4.5 4.5L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+        <div class="faq-a"><div><p data-fr="Si votre dossier n&#x27;aboutit pas dans les conditions prévues au contrat, nos honoraires vous sont remboursés sous 90 jours. Les frais officiels déjà versés à l&#x27;administration et les frais de traduction ne sont pas concernés, car ils ne nous reviennent pas. Le détail exact figure dans nos conditions générales de vente, que vous recevez avant tout paiement." data-en="If your application doesn&#x27;t succeed under the terms of the contract, our fees are refunded within 90 days. Official government fees already paid and translation costs are excluded, as they don&#x27;t come to us. The exact terms are in our general conditions, which you receive before any payment.">Si votre dossier n'aboutit pas dans les conditions prévues au contrat, nos honoraires vous sont remboursés sous 90 jours. Les frais officiels déjà versés à l'administration et les frais de traduction ne sont pas concernés, car ils ne nous reviennent pas. Le détail exact figure dans nos conditions générales de vente, que vous recevez avant tout paiement.</p></div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span class="faq-n">Q3</span>
+          <span class="faq-t" data-fr="Que comprend le prix, et qu&#x27;est-ce qui reste à ma charge ?" data-en="What does the price include, and what do I pay separately?">Que comprend le prix, et qu'est-ce qui reste à ma charge ?</span>
+          <svg class="faq-chev" width="13" height="8" viewBox="0 0 11 7" fill="none"><path d="M1 1l4.5 4.5L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+        <div class="faq-a"><div><p data-fr="Le montant annoncé couvre notre accompagnement : l&#x27;analyse de votre situation, le choix du statut, la constitution du dossier, la vérification des pièces, le dépôt et le suivi. Restent à votre charge les frais officiels de l&#x27;administration, les traductions assermentées, les légalisations, l&#x27;assurance santé et vos frais de déplacement. Ces montants vous sont annoncés à l&#x27;avance et facturés au réel, sans marge de notre côté." data-en="The stated amount covers our service: reviewing your situation, choosing the status, building the file, checking documents, filing and follow-up. You pay separately for official government fees, sworn translations, legalisations, health insurance and your travel. These are stated upfront and charged at cost, with no markup from us.">Le montant annoncé couvre notre accompagnement : l'analyse de votre situation, le choix du statut, la constitution du dossier, la vérification des pièces, le dépôt et le suivi. Restent à votre charge les frais officiels de l'administration, les traductions assermentées, les légalisations, l'assurance santé et vos frais de déplacement. Ces montants vous sont annoncés à l'avance et facturés au réel, sans marge de notre côté.</p></div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span class="faq-n">Q4</span>
+          <span class="faq-t" data-fr="Puis-je payer en plusieurs fois ?" data-en="Can I pay in instalments?">Puis-je payer en plusieurs fois ?</span>
+          <svg class="faq-chev" width="13" height="8" viewBox="0 0 11 7" fill="none"><path d="M1 1l4.5 4.5L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+        <div class="faq-a"><div><p data-fr="Oui. Le paiement est échelonné : une part au lancement de la procédure, le solde plus tard. Sur les dossiers de permis de travail européens, 75 % du montant n&#x27;est dû qu&#x27;après réception d&#x27;un accord favorable. Vous ne payez donc l&#x27;essentiel qu&#x27;une fois le résultat obtenu." data-en="Yes. Payment is staged: a share when the process starts, the balance later. On European work permit files, 75% is due only after a positive decision. So you pay most of it only once you have the result.">Oui. Le paiement est échelonné : une part au lancement de la procédure, le solde plus tard. Sur les dossiers de permis de travail européens, 75 % du montant n'est dû qu'après réception d'un accord favorable. Vous ne payez donc l'essentiel qu'une fois le résultat obtenu.</p></div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span class="faq-n">Q5</span>
+          <span class="faq-t" data-fr="Combien de temps prend la procédure ?" data-en="How long does the process take?">Combien de temps prend la procédure ?</span>
+          <svg class="faq-chev" width="13" height="8" viewBox="0 0 11 7" fill="none"><path d="M1 1l4.5 4.5L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+        <div class="faq-a"><div><p data-fr="Cela dépend entièrement du pays et du statut demandé. Les délais indiqués sur le site sont des moyennes constatées, pas des engagements : un changement de réglementation, un carnet de rendez-vous saturé en ambassade ou une pièce manquante peuvent les allonger. Nous vous donnons une estimation réaliste lors du premier échange, et nous vous prévenons dès qu&#x27;elle évolue." data-en="It depends entirely on the country and the status. The timelines shown are observed averages, not commitments: a rule change, a saturated embassy calendar or a missing document can extend them. We give you a realistic estimate at the first call, and tell you as soon as it changes.">Cela dépend entièrement du pays et du statut demandé. Les délais indiqués sur le site sont des moyennes constatées, pas des engagements : un changement de réglementation, un carnet de rendez-vous saturé en ambassade ou une pièce manquante peuvent les allonger. Nous vous donnons une estimation réaliste lors du premier échange, et nous vous prévenons dès qu'elle évolue.</p></div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span class="faq-n">Q6</span>
+          <span class="faq-t" data-fr="Dois-je me déplacer à Dubaï pour faire appel à vous ?" data-en="Do I need to travel to Dubai to work with you?">Dois-je me déplacer à Dubaï pour faire appel à vous ?</span>
+          <svg class="faq-chev" width="13" height="8" viewBox="0 0 11 7" fill="none"><path d="M1 1l4.5 4.5L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+        <div class="faq-a"><div><p data-fr="Non. L&#x27;intégralité de l&#x27;accompagnement se fait à distance, par WhatsApp et par e-mail. Vous n&#x27;avez à vous déplacer que pour les rendez-vous imposés par l&#x27;administration du pays concerné : biométrie, dépôt en ambassade, test médical selon les cas. Nous vous prévenons de ces déplacements bien à l&#x27;avance." data-en="No. The whole service runs remotely, over WhatsApp and email. You only travel for appointments required by the authorities of the country concerned: biometrics, embassy filing, medical test in some cases. We warn you about these well in advance.">Non. L'intégralité de l'accompagnement se fait à distance, par WhatsApp et par e-mail. Vous n'avez à vous déplacer que pour les rendez-vous imposés par l'administration du pays concerné : biométrie, dépôt en ambassade, test médical selon les cas. Nous vous prévenons de ces déplacements bien à l'avance.</p></div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span class="faq-n">Q7</span>
+          <span class="faq-t" data-fr="Quels documents devrai-je fournir ?" data-en="What documents will I need to provide?">Quels documents devrai-je fournir ?</span>
+          <svg class="faq-chev" width="13" height="8" viewBox="0 0 11 7" fill="none"><path d="M1 1l4.5 4.5L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+        <div class="faq-a"><div><p data-fr="Cela varie selon le pays et le statut. Dans tous les cas : un passeport valide, des justificatifs de revenus ou d&#x27;activité, un extrait de casier judiciaire et une preuve de logement. La liste précise et personnalisée vous est remise après le premier échange, avec pour chaque pièce le format attendu et si une traduction ou une apostille est nécessaire." data-en="It varies by country and status. In all cases: a valid passport, proof of income or activity, a criminal record extract and proof of accommodation. The precise, personalised list is given to you after the first call, with the required format for each item and whether a translation or apostille is needed.">Cela varie selon le pays et le statut. Dans tous les cas : un passeport valide, des justificatifs de revenus ou d'activité, un extrait de casier judiciaire et une preuve de logement. La liste précise et personnalisée vous est remise après le premier échange, avec pour chaque pièce le format attendu et si une traduction ou une apostille est nécessaire.</p></div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span class="faq-n">Q8</span>
+          <span class="faq-t" data-fr="Que se passe-t-il si mon dossier est refusé ?" data-en="What happens if my application is refused?">Que se passe-t-il si mon dossier est refusé ?</span>
+          <svg class="faq-chev" width="13" height="8" viewBox="0 0 11 7" fill="none"><path d="M1 1l4.5 4.5L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+        <div class="faq-a"><div><p data-fr="Nous récupérons le motif du refus auprès de l&#x27;autorité, nous vous l&#x27;expliquons, et nous vous disons franchement si un nouveau dépôt a des chances d&#x27;aboutir ou non. Selon le motif et les conditions du contrat, la garantie de remboursement peut s&#x27;appliquer. Nous ne vous relancerons pas dans une seconde procédure si nous la savons perdue d&#x27;avance." data-en="We obtain the reason for the refusal from the authority, explain it to you, and tell you honestly whether refiling stands a chance. Depending on the reason and the contract terms, the refund guarantee may apply. We won&#x27;t push you into a second attempt we know is doomed.">Nous récupérons le motif du refus auprès de l'autorité, nous vous l'expliquons, et nous vous disons franchement si un nouveau dépôt a des chances d'aboutir ou non. Selon le motif et les conditions du contrat, la garantie de remboursement peut s'appliquer. Nous ne vous relancerons pas dans une seconde procédure si nous la savons perdue d'avance.</p></div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span class="faq-n">Q9</span>
+          <span class="faq-t" data-fr="Comment suis-je tenu informé de l&#x27;avancement ?" data-en="How am I kept informed?">Comment suis-je tenu informé de l'avancement ?</span>
+          <svg class="faq-chev" width="13" height="8" viewBox="0 0 11 7" fill="none"><path d="M1 1l4.5 4.5L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+        <div class="faq-a"><div><p data-fr="Un interlocuteur unique suit votre dossier du début à la fin, joignable sur WhatsApp aux horaires de bureau. Vous êtes prévenu à chaque étape franchie, et vous pouvez demander un point d&#x27;avancement à tout moment sans attendre notre appel." data-en="A single contact handles your file from start to finish, reachable on WhatsApp during office hours. You&#x27;re notified at every completed step, and you can ask for an update at any time without waiting for us to call.">Un interlocuteur unique suit votre dossier du début à la fin, joignable sur WhatsApp aux horaires de bureau. Vous êtes prévenu à chaque étape franchie, et vous pouvez demander un point d'avancement à tout moment sans attendre notre appel.</p></div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span class="faq-n">Q10</span>
+          <span class="faq-t" data-fr="Pourquoi une société établie à Dubaï ?" data-en="Why a company based in Dubai?">Pourquoi une société établie à Dubaï ?</span>
+          <svg class="faq-chev" width="13" height="8" viewBox="0 0 11 7" fill="none"><path d="M1 1l4.5 4.5L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+        <div class="faq-a"><div><p data-fr="Parce que c&#x27;est là que se trouve notre équipe et l&#x27;essentiel de notre activité. Cela nous donne un accès direct aux administrations et aux zones franches émiriennes, et un décalage horaire commode avec l&#x27;Europe. Nos coordonnées complètes et notre immatriculation figurent dans les mentions légales." data-en="Because that&#x27;s where our team and most of our activity are. It gives us direct access to Emirati authorities and free zones, and a convenient time difference with Europe. Our full details and registration are in the legal notice.">Parce que c'est là que se trouve notre équipe et l'essentiel de notre activité. Cela nous donne un accès direct aux administrations et aux zones franches émiriennes, et un décalage horaire commode avec l'Europe. Nos coordonnées complètes et notre immatriculation figurent dans les mentions légales.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PARTENAIRES -->
 <section class="partners">
   <div class="wrap">
@@ -652,6 +777,15 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;color:var(--muted);f
     }, {threshold:.18});
     cards.forEach(function(c){ io.observe(c); });
   }
+
+  // --- FAQ ---
+  document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = btn.parentElement;
+      var open = item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+    });
+  });
 
   // --- Menu déroulant visas ---
   var drop = document.getElementById('drop');

@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AGD Business Services — Emploi en Roumanie, Bulgarie, Slovénie, Moldavie</title>
+<meta name="description" content="AGD Business Services accompagne les demandes de permis de travail en Roumanie, Bulgarie, Slovénie et Moldavie. Honoraires transparents, 75 % payables après accord.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#05050A;
+  --surface:#0E0C18;
+  --surface-2:#141024;
+  --line:rgba(167,139,250,.14);
+  --violet:#8B5CF6;
+  --magenta:#C026D3;
+  --violet-soft:#A78BFA;
+  --text:#EDEBF5;
+  --muted:#8F8AA3;
+  --serif:"Instrument Serif",Georgia,serif;
+  --sans:"Instrument Sans",system-ui,-apple-system,sans-serif;
+  --wrap:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--ink);color:var(--text);font-family:var(--sans);
+  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--violet-soft);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+
+/* ---------- NAV ---------- */
+header{
+  position:sticky;top:0;z-index:60;
+  background:rgba(5,5,10,.72);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo img{height:42px;width:auto}
+footer .logo img{height:52px;opacity:.9}
+.nav-links{display:flex;align-items:center;gap:34px}
+.nav-links a{font-size:15px;color:var(--muted);transition:color .18s}
+.nav-links a:hover{color:var(--text)}
+.drop{position:relative}
+.drop>button{
+  background:none;border:0;color:var(--muted);font:inherit;font-size:15px;cursor:pointer;
+  display:flex;align-items:center;gap:6px;padding:0;
+}
+.drop>button:hover{color:var(--text)}
+.drop>button svg{transition:transform .2s}
+.drop.open>button svg{transform:rotate(180deg)}
+.drop-menu{
+  position:absolute;top:calc(100% + 16px);left:-18px;min-width:238px;
+  background:var(--surface-2);border:1px solid var(--line);border-radius:14px;
+  padding:8px;opacity:0;visibility:hidden;transform:translateY(-6px);
+  transition:opacity .18s,transform .18s,visibility .18s;
+  box-shadow:0 24px 48px rgba(0,0,0,.55);
+}
+.drop.open .drop-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.drop-menu a{display:block;padding:11px 14px;border-radius:9px;font-size:15px;color:var(--text)}
+.drop-menu a:hover{background:rgba(139,92,246,.13)}
+.drop-menu span{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.lang button{
+  background:none;border:0;color:var(--muted);font:inherit;font-size:13px;font-weight:500;
+  padding:7px 14px;cursor:pointer;transition:.18s;
+}
+.lang button.on{background:linear-gradient(135deg,var(--violet),var(--magenta));color:#fff}
+.burger{display:none;background:none;border:0;cursor:pointer;padding:8px}
+.burger span{display:block;width:23px;height:2px;background:var(--text);margin:5px 0;transition:.25s}
+.burger.on span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.on span:nth-child(2){opacity:0}
+.burger.on span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;padding:150px 0 118px;overflow:hidden}
+.hero-bg{
+  position:absolute;inset:0;background:url('img/hero.jpg') center/cover no-repeat;
+  opacity:.5;
+}
+.hero-bg::after{
+  content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(90deg,var(--ink) 4%,rgba(5,5,10,.72) 46%,rgba(5,5,10,.3) 100%),
+    linear-gradient(0deg,var(--ink) 2%,transparent 42%);
+}
+.glow{
+  position:absolute;inset:auto;width:900px;height:900px;border-radius:50%;
+  background:radial-gradient(circle,rgba(139,92,246,.26),rgba(192,38,211,.09) 42%,transparent 68%);
+  top:-420px;left:50%;transform:translateX(-50%);pointer-events:none;
+}
+.hero-inner{position:relative;max-width:860px}
+h1{
+  font-family:var(--serif);font-weight:400;font-size:clamp(44px,6.4vw,80px);
+  line-height:1.04;letter-spacing:-.015em;
+}
+.grad{background:linear-gradient(110deg,var(--violet-soft),var(--magenta));-webkit-background-clip:text;background-clip:text;color:transparent}
+.cursor{
+  display:inline-block;width:3px;height:.82em;margin-left:6px;vertical-align:baseline;
+  background:var(--violet-soft);animation:blink .9s steps(1) infinite;
+}
+@keyframes blink{50%{opacity:0}}
+.cursor.done{animation:none;opacity:0}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+.card{opacity:0;transform:translateY(26px)}
+.card.in{opacity:1;transform:none;transition:opacity .65s ease,transform .65s cubic-bezier(.22,.8,.3,1)}
+.card:nth-child(2).in{transition-delay:.14s}
+.card:nth-child(3).in{transition-delay:.28s}
+@media(prefers-reduced-motion:reduce){.card{opacity:1;transform:none}}
+.lede{font-size:19px;color:var(--muted);max-width:620px;margin-top:26px}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:11px;
+  font-size:15.5px;font-weight:500;transition:transform .16s,box-shadow .16s,background .16s;
+}
+.btn-primary{background:linear-gradient(135deg,var(--violet),var(--magenta));color:#fff;box-shadow:0 10px 32px rgba(139,92,246,.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(139,92,246,.42)}
+.btn-ghost{border:1px solid var(--line);color:var(--text)}
+.btn-ghost:hover{background:rgba(139,92,246,.1)}
+
+/* ---------- SECTIONS ---------- */
+section{padding:96px 0}
+.sec-head{max-width:620px;margin-bottom:56px}
+.sec-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(32px,4.2vw,48px);line-height:1.12;letter-spacing:-.01em}
+.sec-head p{color:var(--muted);margin-top:16px;font-size:17px}
+
+/* Destinations — cartes offres */
+.dest{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
+.card{
+  position:relative;display:flex;flex-direction:column;overflow:hidden;
+  border:1px solid var(--line);border-radius:20px;background:var(--surface);
+  transition:transform .22s,border-color .22s,box-shadow .22s;
+}
+.card:hover{transform:translateY(-5px);border-color:rgba(167,139,250,.4);box-shadow:0 26px 56px rgba(0,0,0,.5)}
+.card.featured{border-color:rgba(167,139,250,.45);background:linear-gradient(175deg,rgba(139,92,246,.11),var(--surface) 42%)}
+.badge{
+  position:absolute;top:16px;right:16px;z-index:3;font-size:12.5px;font-weight:500;
+  padding:6px 13px;border-radius:999px;color:#fff;
+  background:linear-gradient(135deg,var(--violet),var(--magenta));
+}
+.card-media{position:relative;height:132px;background-size:cover;background-position:center}
+.card-media::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(5,5,10,.1) 0%,rgba(5,5,10,.75) 72%,var(--surface) 100%);
+}
+.card-dubai{background-image:url('img/dubai.jpg'),linear-gradient(150deg,#C99A3B,#7A3E8F 58%,#3B1D5A)}
+.card-espagne{background-image:url('img/espagne.jpg'),linear-gradient(150deg,#D9534F,#B03A78 55%,#3B1D5A)}
+.card-malte{background-image:url('img/malte.jpg'),linear-gradient(150deg,#2E9BC4,#6B4BC4 58%,#3B1D5A)}
+.flag{
+  position:absolute;top:16px;left:18px;z-index:2;width:36px;height:25px;border-radius:5px;
+  overflow:hidden;box-shadow:0 3px 12px rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.24);
+}
+.flag svg{display:block;width:100%;height:100%}
+.card-body{padding:0 26px 26px;margin-top:-34px;position:relative;z-index:2;display:flex;flex-direction:column;flex:1}
+.dest-name{font-family:var(--serif);font-size:34px;line-height:1.05}
+.dest-name em{display:block;font-family:var(--sans);font-style:normal;font-size:13px;color:var(--muted);margin-top:8px}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin:18px 0 22px}
+.tag{border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:13px;color:var(--text);background:rgba(255,255,255,.03)}
+.price-box{
+  border:1px solid var(--line);border-radius:13px;padding:18px 20px;background:rgba(255,255,255,.025);
+}
+.price{display:flex;align-items:baseline;gap:8px}
+.price b{font-family:var(--serif);font-size:40px;font-weight:400;line-height:1}
+.price span{color:var(--muted);font-size:14px}
+.price-note{color:var(--muted);font-size:13.5px;margin-top:9px;line-height:1.5}
+.feat-title{font-size:13.5px;color:var(--muted);margin:26px 0 14px}
+.feats{list-style:none;display:grid;gap:11px}
+.feats li{display:flex;gap:11px;align-items:flex-start;font-size:14.5px;line-height:1.5}
+.feats svg{flex:none;margin-top:4px;color:var(--violet-soft)}
+.card-cta{
+  display:flex;align-items:center;justify-content:center;gap:9px;
+  margin-top:26px;padding:14px 20px;border-radius:11px;font-size:15px;font-weight:500;
+  border:1px solid var(--line);color:var(--text);transition:.18s;
+}
+.card:hover .card-cta{background:linear-gradient(135deg,var(--violet),var(--magenta));border-color:transparent;color:#fff}
+.card.featured .card-cta{background:linear-gradient(135deg,var(--violet),var(--magenta));border-color:transparent;color:#fff}
+
+/* Page emplois */
+.page-head{padding:78px 0 48px}
+.page-head h1{font-family:var(--serif);font-weight:400;font-size:clamp(38px,5.4vw,62px);line-height:1.06}
+.page-head p{color:var(--muted);max-width:640px;margin-top:18px;font-size:19px}
+.offers-wrap{padding-top:0}
+.offers{display:grid;gap:26px}
+.offer{
+  display:grid;grid-template-columns:300px 1fr;overflow:hidden;
+  border:1px solid var(--line);border-radius:20px;background:var(--surface);
+  opacity:0;transform:translateY(26px);transition:border-color .22s;
+}
+.offer.in{opacity:1;transform:none;transition:opacity .65s ease,transform .65s cubic-bezier(.22,.8,.3,1),border-color .22s}
+.offer:hover{border-color:rgba(167,139,250,.36)}
+.offer-media{
+  position:relative;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:26px;min-height:210px;background-size:cover;background-position:center;
+}
+.offer-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,5,10,.05),rgba(5,5,10,.6))}
+.emp-ro{background-image:linear-gradient(150deg,#2E4C9B,#6B3F9E 56%,#3B1D5A)}
+.emp-bg{background-image:linear-gradient(150deg,#1E8A6B,#5B3F9E 56%,#3B1D5A)}
+.emp-si{background-image:linear-gradient(150deg,#2C6BA8,#6B3F9E 56%,#3B1D5A)}
+.emp-md{background-image:linear-gradient(150deg,#B0324A,#6B3F9E 56%,#3B1D5A)}
+.offer-media .flag{position:absolute;top:24px;left:26px;width:40px;height:28px;z-index:3}
+.offer-title{position:relative;z-index:2}
+.offer-title h3{font-family:var(--serif);font-weight:400;font-size:34px;line-height:1.05}
+.offer-title span{display:block;font-size:13px;color:rgba(255,255,255,.74);margin-top:7px}
+.offer-body{padding:28px 30px;display:grid;grid-template-columns:1fr 1.15fr .85fr;gap:28px;align-items:start}
+.pay{display:grid;gap:10px}
+.pay-row{display:flex;gap:13px;align-items:center;border:1px solid var(--line);border-radius:11px;padding:11px 13px;background:rgba(255,255,255,.02)}
+.pay-pct{flex:none;font-size:12.5px;font-weight:600;color:#fff;padding:5px 10px;border-radius:7px;background:linear-gradient(135deg,var(--violet),var(--magenta))}
+.pay-row b{display:block;font-size:15.5px;font-weight:600}
+.pay-row span{display:block;font-size:12.5px;color:var(--muted);margin-top:2px;line-height:1.4}
+.offer-side{display:flex;flex-direction:column;gap:18px}
+.delay span{display:block;font-size:13px;color:var(--muted);margin-bottom:5px}
+.delay b{font-family:var(--serif);font-size:26px;font-weight:400}
+.offer-cta{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:13px 20px;border-radius:10px;border:1px solid var(--line);
+  font-size:14.5px;font-weight:500;transition:.18s;
+}
+.offer-cta:hover{background:linear-gradient(135deg,var(--violet),var(--magenta));border-color:transparent;color:#fff}
+.offer-cta svg{transition:transform .2s}
+.offer-cta:hover svg{transform:translateX(4px)}
+.offers-note{margin-top:38px;font-size:13.5px;color:var(--muted);line-height:1.7;max-width:900px}
+@media(max-width:1080px){
+  .offer-body{grid-template-columns:1fr 1fr}
+  .offer-side{grid-column:1/-1;flex-direction:row;align-items:flex-end;justify-content:space-between}
+}
+@media(max-width:760px){
+  .offer{grid-template-columns:1fr}
+  .offer-media{min-height:150px}
+  .offer-body{grid-template-columns:1fr;padding:24px}
+  .offer-side{flex-direction:column;align-items:stretch}
+}
+@media(prefers-reduced-motion:reduce){.offer{opacity:1;transform:none}}
+
+/* Partenaires */
+.partners{border-top:1px solid var(--line);text-align:center}
+.partners h2{font-family:var(--serif);font-weight:400;font-size:clamp(30px,4vw,44px);margin-bottom:14px}
+.partners p{color:var(--muted);max-width:520px;margin:0 auto 46px}
+.partner-grid{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:46px 62px}
+.partner{display:flex;align-items:center;justify-content:center;height:78px}
+.partner img{height:100%;width:auto;max-width:190px;object-fit:contain;opacity:.92;transition:opacity .2s}
+.partner:hover img{opacity:1}
+
+/* Étapes */
+.steps{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.step-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--line)}
+.step{background:var(--surface);padding:34px 28px}
+.step-n{font-family:var(--serif);font-size:15px;color:var(--violet-soft);margin-bottom:18px}
+.step h3{font-size:18px;font-weight:600;margin-bottom:10px}
+.step p{color:var(--muted);font-size:15px}
+
+/* Garanties */
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.trust{border:1px solid var(--line);border-radius:16px;padding:32px;background:linear-gradient(160deg,var(--surface-2),transparent)}
+.trust h3{font-size:18px;font-weight:600;margin-bottom:12px}
+.trust p{color:var(--muted);font-size:15px}
+
+/* Emplois teaser */
+.jobs{
+  border:1px solid var(--line);border-radius:22px;padding:56px;
+  background:radial-gradient(120% 140% at 12% 0%,rgba(139,92,246,.16),transparent 58%),var(--surface);
+  display:flex;flex-wrap:wrap;gap:32px;align-items:center;justify-content:space-between;
+}
+.jobs h2{font-family:var(--serif);font-weight:400;font-size:clamp(28px,3.6vw,40px);line-height:1.15;max-width:520px}
+.jobs p{color:var(--muted);margin-top:14px;max-width:480px}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+form{display:grid;gap:16px}
+label{font-size:14px;color:var(--muted);display:block;margin-bottom:7px}
+input,select,textarea{
+  width:100%;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;
+  padding:13px 15px;color:var(--text);font:inherit;font-size:15.5px;
+}
+input:focus,select,textarea:focus{border-color:var(--violet)}
+textarea{min-height:118px;resize:vertical}
+.contact-side p{color:var(--muted);margin-bottom:26px}
+.contact-line{display:flex;gap:14px;align-items:flex-start;padding:18px 0;border-top:1px solid var(--line)}
+.contact-line b{display:block;font-size:15px;font-weight:600}
+.contact-line span{color:var(--muted);font-size:14.5px}
+
+/* Footer */
+footer{border-top:1px solid var(--line);padding:56px 0 40px;color:var(--muted);font-size:14.5px}
+.foot-top{display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between;margin-bottom:38px}
+.foot-links{display:flex;flex-wrap:wrap;gap:26px}
+.foot-links a:hover{color:var(--text)}
+.legal{border-top:1px solid var(--line);padding-top:26px;font-size:13.5px;line-height:1.7;max-width:820px}
+
+/* WhatsApp */
+.wa{
+  position:fixed;right:22px;bottom:22px;z-index:80;
+  width:58px;height:58px;border-radius:50%;background:#25D366;
+  display:grid;place-items:center;box-shadow:0 10px 30px rgba(37,211,102,.36);
+  transition:transform .18s;
+}
+.wa:hover{transform:scale(1.07)}
+.wa svg{width:31px;height:31px;fill:#fff}
+
+@media(max-width:900px){
+  .step-grid{grid-template-columns:repeat(2,1fr)}
+  .trust-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr;gap:44px}
+  .dest{grid-template-columns:1fr;gap:20px}
+  .jobs-grid{grid-template-columns:1fr}
+  .partner{height:58px}
+  .partner-grid{gap:32px 40px}
+  .jobs{padding:38px}
+}
+@media(max-width:760px){
+  .burger{display:block}
+  .nav-links{
+    position:fixed;inset:74px 0 auto 0;flex-direction:column;align-items:flex-start;gap:0;
+    background:var(--ink);border-bottom:1px solid var(--line);padding:12px 24px 26px;
+    display:none;
+  }
+  .nav-links.open{display:flex}
+  .nav-links>a,.drop{width:100%;padding:15px 0;border-bottom:1px solid var(--line)}
+  .drop-menu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;background:none;border:0;padding:10px 0 0;display:none}
+  .drop.open .drop-menu{display:block}
+  .drop-menu a{padding:10px 0}
+  .hero{padding:76px 0 68px}
+  section{padding:70px 0}
+  .step-grid{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="logo"><img src="logo-agd.png" alt="AGD Business Services"></a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
+      <div class="drop" id="drop">
+        <button type="button" id="dropBtn" aria-expanded="false">
+          <span data-fr="Nos visas" data-en="Our visas">Nos visas</span>
+          <svg width="11" height="7" viewBox="0 0 11 7" fill="none"><path d="M1 1l4.5 4.5L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+        <div class="drop-menu">
+          <a href="visa-dubai.html">Dubaï<span data-fr="Freelance · Business · Salarié" data-en="Freelance · Business · Employment">Freelance · Business · Salarié</span></a>
+          <a href="visa-espagne.html">Espagne<span data-fr="Tourisme · Freelance · Non lucratif" data-en="Tourist · Freelance · Non-lucrative">Tourisme · Freelance · Non lucratif</span></a>
+          <a href="visa-malte.html">Malte<span data-fr="Freelance · Nomad Residence" data-en="Freelance · Nomad Residence">Freelance · Nomad Residence</span></a>
+        </div>
+      </div>
+      <a href="emplois.html" data-fr="Offres d'emploi" data-en="Job offers">Offres d'emploi</a>
+      <a href="#contact" data-fr="Contact" data-en="Contact">Contact</a>
+    </nav>
+
+    <div style="display:flex;align-items:center;gap:14px">
+      <div class="lang">
+        <button type="button" class="on" data-lang="fr">FR</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="page-head">
+  <div class="wrap">
+    <h1 data-fr="Travailler en Europe" data-en="Work in Europe">Travailler en Europe</h1>
+    <p data-fr="Profitez de mes dernières offres d&#39;emploi." data-en="Browse my latest job openings.">Profitez de mes dernières offres d&#39;emploi.</p>
+  </div>
+</section>
+
+<section class="offers-wrap">
+  <div class="wrap">
+    <div class="offers">
+      <article class="offer">
+        <div class="offer-media emp-ro">
+          <span class="flag"><svg viewBox="0 0 60 40"><rect width="20" height="40" fill="#002B7F"/><rect x="20" width="20" height="40" fill="#FCD116"/><rect x="40" width="20" height="40" fill="#CE1126"/></svg></span>
+          <div class="offer-title">
+            <h3 data-fr="Roumanie" data-en="Romania">Roumanie</h3>
+            <span data-fr="Permis de travail" data-en="Work permit">Permis de travail</span>
+          </div>
+        </div>
+        <div class="offer-body">
+          <div class="price-box">
+            <div class="price"><b>24 000 AED</b></div>
+            <div class="price-note" data-fr="Constitution du dossier et honoraires de conseil." data-en="File preparation and consultancy fees.">Constitution du dossier et honoraires de conseil.</div>
+          </div>
+          <div class="pay">
+            <div class="pay-row">
+              <span class="pay-pct">25 %</span>
+              <div><b>6 000 AED</b><span data-fr="au lancement de la procédure" data-en="to start the process">au lancement de la procédure</span></div>
+            </div>
+            <div class="pay-row">
+              <span class="pay-pct">75 %</span>
+              <div><b>18 000 AED</b><span data-fr="uniquement après accord favorable" data-en="only after a positive approval">uniquement après accord favorable</span></div>
+            </div>
+          </div>
+          <div class="offer-side">
+            <div class="delay">
+              <span data-fr="Délai moyen" data-en="Average timeline">Délai moyen</span>
+              <b data-fr="2 à 6 mois" data-en="2 to 6 months">2 à 6 mois</b>
+            </div>
+            <a class="offer-cta" href="https://wa.me/971526020915" target="_blank" rel="noopener">
+              <span data-fr="Demander ce dossier" data-en="Request this file">Demander ce dossier</span>
+              <svg width="16" height="11" viewBox="0 0 17 11" fill="none"><path d="M1 5.5h14M11 1l4.5 4.5L11 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="offer">
+        <div class="offer-media emp-bg">
+          <span class="flag"><svg viewBox="0 0 60 40"><rect width="60" height="13.34" fill="#fff"/><rect y="13.34" width="60" height="13.33" fill="#00966E"/><rect y="26.67" width="60" height="13.33" fill="#D62612"/></svg></span>
+          <div class="offer-title">
+            <h3 data-fr="Bulgarie" data-en="Bulgaria">Bulgarie</h3>
+            <span data-fr="Permis de travail" data-en="Work permit">Permis de travail</span>
+          </div>
+        </div>
+        <div class="offer-body">
+          <div class="price-box">
+            <div class="price"><b>24 000 AED</b></div>
+            <div class="price-note" data-fr="Constitution du dossier et honoraires de conseil." data-en="File preparation and consultancy fees.">Constitution du dossier et honoraires de conseil.</div>
+          </div>
+          <div class="pay">
+            <div class="pay-row">
+              <span class="pay-pct">25 %</span>
+              <div><b>6 000 AED</b><span data-fr="au lancement de la procédure" data-en="to start the process">au lancement de la procédure</span></div>
+            </div>
+            <div class="pay-row">
+              <span class="pay-pct">75 %</span>
+              <div><b>18 000 AED</b><span data-fr="uniquement après accord favorable" data-en="only after a positive approval">uniquement après accord favorable</span></div>
+            </div>
+          </div>
+          <div class="offer-side">
+            <div class="delay">
+              <span data-fr="Délai moyen" data-en="Average timeline">Délai moyen</span>
+              <b data-fr="2 à 6 mois" data-en="2 to 6 months">2 à 6 mois</b>
+            </div>
+            <a class="offer-cta" href="https://wa.me/971526020915" target="_blank" rel="noopener">
+              <span data-fr="Demander ce dossier" data-en="Request this file">Demander ce dossier</span>
+              <svg width="16" height="11" viewBox="0 0 17 11" fill="none"><path d="M1 5.5h14M11 1l4.5 4.5L11 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="offer">
+        <div class="offer-media emp-si">
+          <span class="flag"><svg viewBox="0 0 60 40"><rect width="60" height="13.34" fill="#fff"/><rect y="13.34" width="60" height="13.33" fill="#005DA4"/><rect y="26.67" width="60" height="13.33" fill="#ED1C24"/></svg></span>
+          <div class="offer-title">
+            <h3 data-fr="Slovénie" data-en="Slovenia">Slovénie</h3>
+            <span data-fr="Permis de travail" data-en="Work permit">Permis de travail</span>
+          </div>
+        </div>
+        <div class="offer-body">
+          <div class="price-box">
+            <div class="price"><b>24 000 AED</b></div>
+            <div class="price-note" data-fr="Constitution du dossier et honoraires de conseil." data-en="File preparation and consultancy fees.">Constitution du dossier et honoraires de conseil.</div>
+          </div>
+          <div class="pay">
+            <div class="pay-row">
+              <span class="pay-pct">25 %</span>
+              <div><b>6 000 AED</b><span data-fr="au lancement de la procédure" data-en="to start the process">au lancement de la procédure</span></div>
+            </div>
+            <div class="pay-row">
+              <span class="pay-pct">75 %</span>
+              <div><b>18 000 AED</b><span data-fr="uniquement après accord favorable" data-en="only after a positive approval">uniquement après accord favorable</span></div>
+            </div>
+          </div>
+          <div class="offer-side">
+            <div class="delay">
+              <span data-fr="Délai moyen" data-en="Average timeline">Délai moyen</span>
+              <b data-fr="2 à 6 mois" data-en="2 to 6 months">2 à 6 mois</b>
+            </div>
+            <a class="offer-cta" href="https://wa.me/971526020915" target="_blank" rel="noopener">
+              <span data-fr="Demander ce dossier" data-en="Request this file">Demander ce dossier</span>
+              <svg width="16" height="11" viewBox="0 0 17 11" fill="none"><path d="M1 5.5h14M11 1l4.5 4.5L11 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="offer">
+        <div class="offer-media emp-md">
+          <span class="flag"><svg viewBox="0 0 60 40"><rect width="20" height="40" fill="#0046AE"/><rect x="20" width="20" height="40" fill="#FFD200"/><rect x="40" width="20" height="40" fill="#CC092F"/></svg></span>
+          <div class="offer-title">
+            <h3 data-fr="Moldavie" data-en="Moldova">Moldavie</h3>
+            <span data-fr="Permis de travail" data-en="Work permit">Permis de travail</span>
+          </div>
+        </div>
+        <div class="offer-body">
+          <div class="price-box">
+            <div class="price"><b>20 000 AED</b></div>
+            <div class="price-note" data-fr="Constitution du dossier et honoraires de conseil." data-en="File preparation and consultancy fees.">Constitution du dossier et honoraires de conseil.</div>
+          </div>
+          <div class="pay">
+            <div class="pay-row">
+              <span class="pay-pct">25 %</span>
+              <div><b>5 000 AED</b><span data-fr="au lancement de la procédure" data-en="to start the process">au lancement de la procédure</span></div>
+            </div>
+            <div class="pay-row">
+              <span class="pay-pct">75 %</span>
+              <div><b>15 000 AED</b><span data-fr="uniquement après accord favorable" data-en="only after a positive approval">uniquement après accord favorable</span></div>
+            </div>
+          </div>
+          <div class="offer-side">
+            <div class="delay">
+              <span data-fr="Délai moyen" data-en="Average timeline">Délai moyen</span>
+              <b data-fr="2 à 6 mois" data-en="2 to 6 months">2 à 6 mois</b>
+            </div>
+            <a class="offer-cta" href="https://wa.me/971526020915" target="_blank" rel="noopener">
+              <span data-fr="Demander ce dossier" data-en="Request this file">Demander ce dossier</span>
+              <svg width="16" height="11" viewBox="0 0 17 11" fill="none"><path d="M1 5.5h14M11 1l4.5 4.5L11 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+    <p class="offers-note" data-fr="Les frais officiels d&#39;ambassade et de consulat ne sont pas compris dans nos honoraires et sont réglés directement par le demandeur. Les délais indiqués sont des moyennes constatées et peuvent varier selon l&#39;évolution de la réglementation, le traitement des pièces et les disponibilités de rendez-vous en ambassade. Le montage et le dépôt du dossier relèvent de notre mission ; la décision appartient exclusivement aux autorités du pays concerné." data-en="Official embassy and consulate fees are not included in our fees and are paid directly by the applicant. The stated timelines are observed averages and may vary with regulatory changes, document processing and embassy appointment availability. Preparing and filing the application is our role; the decision rests solely with the authorities of the country concerned.">Les frais officiels d&#39;ambassade et de consulat ne sont pas compris dans nos honoraires et sont réglés directement par le demandeur. Les délais indiqués sont des moyennes constatées et peuvent varier selon l&#39;évolution de la réglementation, le traitement des pièces et les disponibilités de rendez-vous en ambassade. Le montage et le dépôt du dossier relèvent de notre mission ; la décision appartient exclusivement aux autorités du pays concerné.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="jobs">
+      <div>
+        <h2 data-fr="Un doute sur le pays qui vous convient ?" data-en="Not sure which country suits you?">Un doute sur le pays qui vous convient ?</h2>
+        <p data-fr="Envoyez-nous votre métier, votre expérience et votre nationalité. Nous vous dirons franchement si votre profil a des chances d&#39;aboutir, et dans quel pays." data-en="Send us your trade, your experience and your nationality. We&#39;ll tell you honestly whether your profile stands a chance, and where.">Envoyez-nous votre métier, votre expérience et votre nationalité. Nous vous dirons franchement si votre profil a des chances d&#39;aboutir, et dans quel pays.</p>
+      </div>
+      <a href="https://wa.me/971526020915" target="_blank" rel="noopener" class="btn btn-primary" data-fr="Nous écrire" data-en="Get in touch">Nous écrire</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <a href="index.html" class="logo"><img src="logo-agd.png" alt="AGD Business Services"></a>
+      <div class="foot-links">
+        <a href="visa-dubai.html">Dubaï</a>
+        <a href="visa-espagne.html" data-fr="Espagne" data-en="Spain">Espagne</a>
+        <a href="visa-malte.html">Malte</a>
+        <a href="emplois.html" data-fr="Offres d'emploi" data-en="Job offers">Offres d'emploi</a>
+        <a href="mentions-legales.html" data-fr="Mentions légales" data-en="Legal notice">Mentions légales</a>
+        <a href="cgv.html" data-fr="CGV" data-en="Terms">CGV</a>
+        <a href="confidentialite.html" data-fr="Confidentialité" data-en="Privacy">Confidentialité</a>
+      </div>
+    </div>
+    <p class="legal" data-fr="AGD Business Services est un cabinet de conseil privé établi à Dubaï. Nous accompagnons la préparation et le dépôt des dossiers de visa. Nous ne sommes ni une administration, ni un service consulaire, et la délivrance d'un visa relève exclusivement de la décision des autorités compétentes du pays concerné. © 2026 AGD. Tous droits réservés." data-en="AGD Business Services is a private consultancy based in Dubai. We assist with preparing and filing visa applications. We are neither a government body nor a consular service, and granting a visa is solely the decision of the competent authorities of the country concerned. © 2026 AGD. All rights reserved.">AGD Business Services est un cabinet de conseil privé établi à Dubaï. Nous accompagnons la préparation et le dépôt des dossiers de visa. Nous ne sommes ni une administration, ni un service consulaire, et la délivrance d'un visa relève exclusivement de la décision des autorités compétentes du pays concerné. © 2026 AGD. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/971526020915" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.12-.27-.2-.57-.35zM12.04 21.5h-.01a9.4 9.4 0 01-4.79-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.38 9.38 0 01-1.44-5.01c0-5.18 4.22-9.4 9.41-9.4a9.35 9.35 0 016.65 2.76 9.32 9.32 0 012.75 6.65c0 5.19-4.22 9.41-9.4 9.41zM20.52 3.48A11.78 11.78 0 0012.04 0C5.5 0 .18 5.32.18 11.86c0 2.09.55 4.13 1.59 5.93L.08 24l6.35-1.66a11.83 11.83 0 005.61 1.43h.01c6.54 0 11.86-5.32 11.86-11.86 0-3.17-1.23-6.15-3.39-8.39z"/></svg>
+</a>
+
+<script>
+(function(){
+  // --- Titre animé (machine à écrire) ---
+  var HEAD = {
+    fr:["Travailler en Europe, ","dossier par dossier."],
+    en:["Work in Europe, ","one file at a time."]
+  };
+  var t1 = document.querySelector('#typed .t1');
+  var t2 = document.querySelector('#typed .t2');
+  var cursor = document.getElementById('cursor');
+  var reveals = document.querySelectorAll('.reveal');
+  var timer = null;
+  if(!t1) t1 = t2 = cursor = {textContent:'',classList:{add:function(){},remove:function(){}}};
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function showRest(){ reveals.forEach(function(el){ el.classList.add('in'); }); }
+
+  function typeTitle(l){
+    clearTimeout(timer);
+    var parts = HEAD[l], full = parts[0] + parts[1], i = 0;
+    t1.textContent = ''; t2.textContent = '';
+    cursor.classList.remove('done');
+    if(reduce){
+      t1.textContent = parts[0]; t2.textContent = parts[1];
+      cursor.classList.add('done'); showRest(); return;
+    }
+    (function step(){
+      i++;
+      t1.textContent = full.slice(0, Math.min(i, parts[0].length));
+      t2.textContent = i > parts[0].length ? full.slice(parts[0].length, i) : '';
+      if(i < full.length){
+        timer = setTimeout(step, 42);
+      } else {
+        cursor.classList.add('done');
+        showRest();
+      }
+    })();
+  }
+
+  // --- Langue ---
+  var lang = 'fr';
+  var nodes = document.querySelectorAll('[data-fr]');
+  function setLang(l){
+    lang = l;
+    document.documentElement.lang = l;
+    nodes.forEach(function(n){
+      var v = n.getAttribute('data-' + l);
+      if(v !== null) n.innerHTML = v;
+    });
+    document.querySelectorAll('.lang button').forEach(function(b){
+      b.classList.toggle('on', b.dataset.lang === l);
+    });
+    typeTitle(l);
+  }
+  typeTitle('fr');
+  document.querySelectorAll('.lang button').forEach(function(b){
+    b.addEventListener('click', function(){ setLang(b.dataset.lang); });
+  });
+
+  // --- Apparition des cartes au défilement ---
+  var cards = document.querySelectorAll('.dest .card, .offers .offer');
+  if(reduce || !('IntersectionObserver' in window)){
+    cards.forEach(function(c){ c.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:.18});
+    cards.forEach(function(c){ io.observe(c); });
+  }
+
+  // --- Menu déroulant visas ---
+  var drop = document.getElementById('drop');
+  var dropBtn = document.getElementById('dropBtn');
+  dropBtn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var open = drop.classList.toggle('open');
+    dropBtn.setAttribute('aria-expanded', open);
+  });
+  document.addEventListener('click', function(){
+    drop.classList.remove('open');
+    dropBtn.setAttribute('aria-expanded', false);
+  });
+
+  // --- Menu mobile ---
+  var burger = document.getElementById('burger');
+  var links = document.getElementById('navLinks');
+  burger.addEventListener('click', function(){
+    burger.classList.toggle('on');
+    links.classList.toggle('open');
+  });
+
+  // --- Formulaire (à connecter) ---
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    alert(lang === 'fr'
+      ? 'Formulaire pas encore connecté — dis-moi où tu veux recevoir les demandes.'
+      : 'Form not connected yet.');
+  });
+})();
+</script>
+</body>
+</html>
